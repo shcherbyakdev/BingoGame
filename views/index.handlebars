@@ -1,0 +1,48 @@
+  <h1 class="title-game">Bingo Game</h1>
+    <div class="container">
+        <div id="create-game-page">
+            <form class= 'entry-form'  id="form">
+                    <label>
+                    <span> Count of users :</span>
+                    <input class="input-field" type="number" id="usersNum" required>
+                </label>
+                <label>
+                    <span> Count of bingo card :</span>
+                    <input class="input-field" type="number"  id="cardsNum" required>
+                </label>
+                <label>
+                    <span> Numbers count :</span>
+                    <input class="input-field" type="number"  id="countNum" required>
+                </label>
+                <div>
+                    <input class="button button-entry" value="Create cards" type="submit" id="createCards">
+                </div> 
+            </form>
+        </div>
+        <div id="play-game-page" class="hide">
+            <div id="users"></div>
+          
+            <div class="controll-buttons">
+                    <input type="button" class="button card-view-button" id="start-game" value="Start game">
+                    <input type="button" class="button card-view-button" id="stop-game" value="Stop game">
+                    <input type="button" class="button card-view-button" id="start-new-game" value="Start new game">
+                    <input type="button" class="button card-view-button" id="exit-game" value="Exit game">
+            </div>
+      <div class="msgAndNumbers">
+            <div id="random-numbers-container">
+                    <h5 class="numbers-title">Numbers</h5>
+                <div id="round-count"></div>
+              
+                <div id="random-numbers"></div>
+
+         
+            
+            </div>
+             
+            <div id="msg">
+                    </div>
+            
+        </div>
+        </div>
+        
+    </div>

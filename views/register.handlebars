@@ -1,0 +1,23 @@
+
+<div class="form">
+   <form action="/users/register" method="post" class="form-login">
+                <h2 class="form-heading">Sign up</h2>
+                <div class="errDiv">
+                         {{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+                </div>
+         
+                    <input class="form-control" type="text"  name="username" placeholder="username">
+                    <input class="form-control" type="password"  name="password" placeholder="password">
+                    <button type="submit" class="btn login-btn">Sign up</button>
+              
+            </form>
+
+             
+        <p>Already have an account? <a href="/users/login" class="foot-link">Login</a></p>
+
+</div>
+         

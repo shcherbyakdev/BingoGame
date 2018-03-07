@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+html,body {
+
+  color: #000;
+  text-align: center;
+  height: 100%;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.title-game{
+  text-align: center;
+  font-size: 3em;
+}
+.entry-form{
+  width: 380px;
+margin: 4em auto;
+padding: 3em 2em 2em 2em;
+background: #fafafa;
+border: 1px solid #ebebeb;
+box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+
+}
+
+.input-field {
+  font-size: 20px;
+  padding: 10px 10px 10px 5px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+-webkit-appearance: none;
+display: block;
+background: #fafafa;
+color: #636363;
+width: 100%;
+border: none;
+border-radius: 0;
+border-bottom: 1px solid #757575;
+}
+.input-field:focus { outline: none; }
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 0;
+  border-bottom: 2px solid #3160B6;
+  cursor: pointer;
+}
+.button:focus { outline: 0; }
+.button-entry {
+  background: #4a89dc;
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+.card-view-button{
+  background: #6b2727;
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+.cardWrapper{
+  display: flex;
+  margin-bottom: 20px;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+.cardContainer div{
+  border: 1px solid #ebebeb;
+    width: 70px;
+}
+.numbers-title{
+color: rgb(155, 68, 68);
+font-size: 20px;
+}
+
+.numbersField{
+  width:400px;
+  min-height: 300px;
+  border: 1px solid rgb(155, 68, 68);
+  margin-bottom: 20px;
+}
+.msgField{
+  width:400px;
+  min-height: 200px;
+  border: 2px solid rgb(155, 68, 68);
+}
+.hide{
+  display: none;
+}
+
+.input {
+  display: block;
+  margin: 20px auto;
+  width: 240px;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  color: #333333;
+}
+
+.container {
+  margin: 0 auto;
+  
+
+}
+
+#create-game-page {
+  margin: 0 auto;
+  max-width: 100%;
+
+}
+
+#randomNumbers {
+  float: right;
+}
+
+#start-game {
+  display: block;
+}
+
+#stop-game {
+  display: none;
+}
+#start-new-game {
+  display:none;
+}
+
+#exit-game {
+  display: block;
+}
+.controll-buttons{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  font-size: 30px;
+  margin-left: 80px;;
+  
+}
+
+#play-game-page{
+  margin: 0 auto;
+}
+
+#random-numbers-container{
+  display: none;
+  font-size: 30px;
+  margin-left: 80px;
+  margin-top: 40px;
+  font-weight: bold;
+  color: #333333;
+  width: 400px;
+  height: 250px;
+  overflow: auto;
+  background: #fafafa;
+border: 1px solid #ebebeb;
+box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+#random-numbers{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: transparent;
+  color: #333333;
+}
+.msgAndNumbers{
+  display: flex;
+  flex-direction: column;
+}
+#random-numbers div{
+  margin-right: 10px;
+}
+
+#msg{
+  display: none;
+   font-size: 14px;
+  margin-left: 80px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333333;
+  width: 400px;
+  overflow: auto;
+  height: 250px;
+  background: #fafafa;
+border: 1px solid #ebebeb;
+box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+.paintedNumber {
+  background-color: #6b2727;
+  color: #fff;
+}
+.alert-danger {
+  color: #a94442;
+}
+.alert {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+
+
+
+/* Login Form */
+
+
+.form{
+width: 380px;
+margin: 6em auto;
+padding: 3em 2em 2em 2em;
+background: #fafafa;
+border: 1px solid #ebebeb;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+.form-heading{
+  text-align: center;
+  font-weight: 200;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+.form-login{
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+input[type="text"],
+input[type="password"]
+{
+  width: 80%;
+  margin-bottom: 25px;
+  height: 40px;
+  outline: none;
+}
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #bbb;
+  padding: 0 0 0 10px;
+  font-size: 14px;
+}
+.form-msg{
+    height: 50px;
+}
+.btn{
+    cursor: pointer;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 20px;
+    width: 80%;
+    height: 40px;
+}
+.foot-link{
+  color: #34495e;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+.errMsg{
+  color: red;
+  margin-bottom: 10px;
+}
+.errDiv{
+  height: 80px;
+}
