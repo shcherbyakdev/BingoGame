@@ -5,55 +5,45 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/user');
 
-// Register
-router.get('/register', function(req, res){
-	res.render('register');
-});
+
 
 // Login
 router.get('/login', function(req, res){
 	res.render('login');
 });
-
-// Register User
-router.post('/register', function(req, res){
-	const username = req.body.username;
-	const password = req.body.password;
-
-
-
-	req.checkBody('username', 'Username is required').notEmpty();
-	req.checkBody('password', 'Password is required').notEmpty();
-
-	const errors = req.validationErrors();
-
-	if(errors){
-		res.render('register',{
-			errors:errors
-		});
-	} else {
-		var newUser = new User({
-				username: username,
-			password: password
-		});
-
-		User.createUser(newUser, function(err, user){
-			if(err) throw err;
-			console.log(user);
-		});
-
-		req.flash('success_msg', 'You are registered and can now login');
-
-		res.redirect('/users/login');
-	}
+// Register
+router.get('/register', function(req, res){
+	res.render('register');
 });
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-   User.getUserByUsername(username, function(err, user){
+passport.use('signup',new LocalStrategy(
+	function(username,password,done){
+		
+		User.getUserByUsername(username,function(err,user){
+			if(err) throw err;
+			if(user){
+				return done(null,false,{message:'User with this name already exists!'})
+			}
+			else{
+				let newUser = new User();
+				newUser.username = username;
+				newUser.password = newUser.generateHash(password);
+				newUser.save(function(err) {
+					if (err)
+							throw err;
+					return done(null, newUser);
+			});
+			}
+		})
+ }));
+
+
+passport.use('login',new LocalStrategy(
+  function(username,password,done) {
+   User.getUserByUsername(username,function(err, user){
    	if(err) throw err;
    	if(!user){
-   		return done(null, false, {message: 'Unknown User'});
+   		return done(null, false, {message: 'Unknown User!'});
    	}
 
    	User.comparePassword(password, user.password, function(err, isMatch){
@@ -78,10 +68,12 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}),
-  function(req, res) {
-    res.redirect('/');
-  });
+  passport.authenticate('login', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}),
+);
+// Register User
+router.post('/register', 
+	passport.authenticate('signup', {successRedirect:'/', failureRedirect:'/users/register',failureFlash: true}),
+);
 
 
 module.exports = router;
